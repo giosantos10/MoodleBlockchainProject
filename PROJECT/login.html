@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="/js/nem-sdk.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<title>Login</title>
+</head>
+
+<body>
+
+	<div class="jumbotron text-center">
+		<h1>Moodle Blockchain</h1>
+	</div>
+	<div id="loginaccount"style="width: 850px;margin: auto;border: 1px solid #444;padding: 20px;overflow: auto;">
+			
+		<form action="/enter_account" method="post" accept-charset=utf-8>
+			<div class="input-group">
+				<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+				<input id="username" type="text" class="form-control" name="username" placeholder="Username">
+			  </div>
+			  <div class="input-group">
+				<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+				<input id="password" type="password" class="form-control" name="password" placeholder="Password">
+			  </div>
+			  <br>
+			<div class="col-md-12">
+				<div class="form-group">
+					<fieldset>
+						<button class="btn btn-success" style="width:100%;" id="login">Log In</button>
+					</fieldset>
+				</div>
+			</div>
+		</form>
+		<form method="get" action="/generate">
+			<div class="col-md-12">
+				<div class="form-group">
+					<fieldset>
+						<button class="btn btn-info" style="width:100%;" id="signup">Sign Up</button>
+					</fieldset>
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+
+</html>

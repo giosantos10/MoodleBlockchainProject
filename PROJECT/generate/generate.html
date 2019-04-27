@@ -1,0 +1,69 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="/js/nem-sdk.js"></script>
+	<script type="module" src="/js/generate.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<title>Generate Account</title>
+</head>
+
+<body>
+
+	<div class="jumbotron text-center">
+	  <h1>Generate Account</h1>
+	</div>
+
+	<p><a href="/login">Back to Log in</a></p>
+
+	<div id="generateaccount" style="width: 850px;margin: auto;border: 1px solid #444;padding: 20px;overflow: auto;">
+		<form id="writeJSON" action="/submit_account" method="post" accept-charset=utf-8>
+			<div class="col-md-12">
+				<div class="form-group">
+					<h1>Are you a teacher or a student?</h1>
+					<label class="control-label">Teacher<input type="radio" name="radio" value="teacher"></label>
+					<label class="control-label">Student<input type="radio" name="radio" value="student"></label>
+					<h1>Enter a Username and Password</h1>
+					<label class="control-label">Username: </label>
+					<input type="text" class="form-control" id="userName" name="userName" />
+					<label class="control-label">Password: </label>
+					<input type="password" class="form-control" id="password" name="password" />
+					<label class="control-label">Private Key: </label>
+					<input type="text" class="form-control" id="privatekey" name="privatekey" readonly/>
+					<label class="control-label">Public Key: </label>
+					<input type="text" class="form-control" id="publickey" name="publickey" readonly/>
+					<label class="control-label">Address: </label>
+					<input type="text" class="form-control" id="address" name="address" readonly/>
+				</div>
+			</div>
+		</form>
+		
+		<div class="col-md-12">
+			<div class="form-group">
+				<fieldset>
+					<button class="btn btn-success" style="width:100%;" id="generate">Generate Account</button>
+					<p id="demo"></p>
+				</fieldset>
+			</div>
+		</div>
+		<div class="col-md-12">
+			<div class="form-group">
+				<fieldset>
+					<button class="btn btn-danger" style="width:100%;" id="setup">Setup Account</button>
+					<p id="demo"></p>
+				</fieldset>
+			</div>
+		</div>
+		<div class="col-md-12">
+			<div class="form-group">
+				<fieldset>
+					<button type="submit" form="writeJSON" class="btn btn-info" style="width:100%; display: none;" id="confirm" value="Finish">Finish</button>
+					<p id="demo"></p>
+				</fieldset>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

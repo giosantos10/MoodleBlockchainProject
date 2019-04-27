@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>Send Confirmation</title>
+</head>
+
+<body onload="setField()">
+
+    <div class="jumbotron text-center">
+        <h1>Confirm Submission</h1>
+    </div>
+    <p><a href="/">Sign Out</a></p>
+    <p><a href="/view_assignments">Back to Home</a></p>
+
+    <h3 hidden id="username"></h3>
+
+    <div id="transfer" class="col-md-offset-4 col-md-4 well"
+        style="border: 1px solid #444;padding: 30px;overflow: auto;">
+        <div class="col-md-12 text-center">
+            <div class="form-group">
+                <fieldset>
+                    <label>Teacher Address</label>
+                    <input class="form-control" style="text-align:center" type="text" id="teacher_address" />
+                </fieldset>
+            </div>
+            <div class="form-group">
+                <fieldset>
+                    <label>Submission Name</label>
+                    <input class="form-control" style="text-align:center" type="text" id="submission_name" />
+                </fieldset>
+            </div>
+            <div class="form-group">
+                <fieldset>
+                    <label>Private Key</label>
+                    <input class="form-control" style="text-align:center" type="text" id="privatekey" />
+                </fieldset>
+            </div>
+            <div class="form-group">
+                <fieldset>
+                    <button class="btn btn-info" style="width:50%;" id="confirm">Confirm Details</button>
+                </fieldset>
+            </div>
+            <div class="form-group">
+                <fieldset>
+                    <button class="btn btn-success" style="width:50%;" id="send">Confirm Submission</button>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    function setField() {
+        const urlParams = new URLSearchParams(window.location.search)
+        const task = urlParams.get('task')
+        const namespace = urlParams.get('username')
+        document.getElementById("username").innerHTML = namespace;
+        $('#submission_name').val(task);
+    }
+</script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"
+    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="/js/nem-sdk.js"></script>
+<script type="module" src="/js/send_confirmation.js"></script>
+
+</html>

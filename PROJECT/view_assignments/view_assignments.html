@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <title>View Assignments</title>
+  </head>
+<body>
+  
+	<div class="jumbotron text-center">
+	  <h1>Choose the class and assignment below.</h1>
+    </div>
+
+<p><a href="/">Sign Out</a></p>
+<div id="transfer" class="col-md-offset-4 col-md-4 well" style="border: 1px solid #444;padding: 30px;overflow: auto;">
+<div class="col-md-12 text-center">
+<div class="form-group">
+<select class="form-control" id="myselect" onchange="passValues(this.value,'http://127.0.0.1:8129/json/user.json')">
+  <option value="">Choose a class:</option>
+  <option value="CS189">CS189</option>
+  <option value="ELC106">ELC106</option>
+  <option value="PH103">PH103</option>
+  <option value="MA21">MA21</option>
+</select>
+</div>
+<br>
+  
+<p id="demo"></p>
+<p id="passAddress"></p>
+</div>
+</div>
+<script>
+function passValues(sel, url) {
+  let xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+    if (this.readyState === 4 && this.status == 200) {
+      let myObj = JSON.parse(this.responseText);
+      if(myObj.TYPE == "student") {
+        let txt = ""
+        txt += "<table class='table table-hover'>"
+        for (let i = 0; i < myObj.ENROLLED_CLASSES[sel].length; i++) {
+          let classes = myObj.ENROLLED_CLASSES[sel][i]
+          let username = myObj.NAME
+          txt += "<tr><td><a href='http://127.0.0.1:8129/send_confirmation" + "?task="+ sel+"_"+ classes+"&username="+ username +"'>" + classes + "</a></td></tr>";
+          console.log(myObj.ENROLLED_CLASSES[sel][i])
+        } 
+        txt += "</table>"    
+        document.getElementById("demo").innerHTML = txt;
+      }
+      else {
+        let txt = ""
+        txt += "<table class='table table-hover'>"
+        for (let i = 0; i < myObj.ENROLLED_CLASSES[sel].length; i++) {
+          let classes = myObj.ENROLLED_CLASSES[sel][i]
+          let username = myObj.NAME
+          txt += "<tr><td><a href='http://127.0.0.1:8129/send_grade" + "?task="+ sel+"_"+ classes+"&username="+ username +"'>" + classes + "</a></td></tr>";
+          console.log(myObj.ENROLLED_CLASSES[sel][i])
+        } 
+        txt += "</table>"    
+        document.getElementById("demo").innerHTML = txt;
+      }
+    }
+  };
+  xhr.open("GET", url, true);
+  xhr.send()
+}
+</script>
+
+<script>
+  function passAddress(url) {
+    let xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+      if (this.readyState === 4 && this.status == 200) {
+        let myObj = JSON.parse(this.responseText);
+        if(myObj.TYPE == "student") {
+          let address = myObj.ADDRESS
+          let username = myObj.NAME
+          let txt = "";
+          txt += "<a href='http://127.0.0.1:8129/view_grades?address=";
+          txt += address + "&username=" + username + "'";
+          txt += '><button class="btn btn-primary">View Grades</button></a>';
+          console.log(txt);
+          document.getElementById("passAddress").innerHTML = txt;
+        }
+        else {
+          let address = myObj.ADDRESS
+          let username = myObj.NAME
+          let txt = "";
+          txt += "<a href='http://127.0.0.1:8129/view_submissions?address=";
+          txt += address + "&username=" + username + "'";
+          txt += '><button class="btn btn-primary">View Submissions</button></a>';
+          console.log(txt);
+          document.getElementById("passAddress").innerHTML = txt;
+        }
+      }
+    };
+    xhr.open("GET", url, true);
+    xhr.send()
+  }
+  passAddress('http://127.0.0.1:8129/json/user.json');
+  </script>
+
+</body>
+</html>

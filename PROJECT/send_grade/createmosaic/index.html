@@ -1,0 +1,84 @@
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<title>Create Mosaic</title>
+</head>
+
+<body>
+
+	<div class="jumbotron text-center">
+	  <h1>Create Mosaic</h1>
+	</div>
+
+	<div id="transfer" style="width: 850px;margin: auto;border: 1px solid #444;padding: 20px;overflow: auto;">
+		<div class="col-md-12">
+			<div class="form-group">
+				<fieldset>
+					<label>Private key</label>
+					<input  class="form-control" type="password" id="privateKey" />
+				</fieldset>
+			</div>
+			<div class="form-group">
+				<fieldset>
+					<label>Mosaic Name</label>
+					<input class="form-control" type="text" id="mosaicname"/>
+				</fieldset>
+			</div>
+			<div class="form-group">
+				<fieldset>
+					<label>Namespace Name</label>
+					<input  class="form-control" type="text" id="namespace"/>
+				</fieldset>
+			</div>
+			<div class="form-group">
+				<fieldset>
+					<label>Description</label>
+					<textarea  class="form-control" rows="5" cols="25" id="mosaicdescription"></textarea>
+				</fieldset>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="form-group">
+				<fieldset>
+					<label>Initial Supply</label>
+					<input  class="form-control" type="text" id="initialsupply"/>				
+				</fieldset>
+			</div>
+			<div class="form-group">
+				<fieldset>
+					<label>Transferrable</label>
+					<input type="checkbox" value="1" id="transferable" checked>					
+				</fieldset>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="form-group">
+				<fieldset>	
+					<label>Divisibility</label>
+					<input class="form-control" type="number" id="divisibility" min="0" max="6" />				
+				</fieldset>
+			</div>
+			<div class="form-group">
+				<fieldset>	
+					<label>Supply Mutable</label>
+					<input type="checkbox" id="supplymutable" checked>			
+				</fieldset>
+			</div>
+		</div>
+		<div class="col-md-12">
+			<div class="form-group">
+				<fieldset>
+					<button class="btn btn-success" style="width:100%;" id="create">Create</button>
+				</fieldset>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="../../dist/nem-sdk.js"></script>
+<script src="script.js"></script>
+
+</html>

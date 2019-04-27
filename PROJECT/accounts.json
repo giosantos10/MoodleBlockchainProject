@@ -1,0 +1,124 @@
+{
+  "accounts": [
+    {
+      "TYPE": "teacher",
+      "NAME": "stud",
+      "PASSWORD": "123",
+      "ENROLLED_CLASSES": {
+        "CS189": [
+          "Quiz_1",
+          "Lab_Activity_2",
+          "Final_Project"
+        ],
+        "ELC106": [
+          "Reflection_Paper_1",
+          "LT_2",
+          "LT_1"
+        ],
+        "PH103": [
+          "Reflection_Paper",
+          "Final_Paper",
+          "Quiz_1"
+        ],
+        "MA21": [
+          "Homework_2",
+          "LT_4",
+          "Seatwork_3"
+        ]
+      },
+      "ADDRESS": "TAV64JZ72U57APAERE23XTOIR6NKVKG4WUPH4ZNP",
+      "PUBLIC_KEY": "89e748f2d6f1f83d435fce93dab25b5e2bae9877ef2f8982d2e1d66394767edc",
+      "PRIVATE_KEY": "59f80a852d451964c6cc9f9f8ce1df34c2a7c7613353375d8b40125566ebfaac"
+    },
+    {
+      "TYPE": "teacher",
+      "NAME": "guro",
+      "PASSWORD": "guro",
+      "ENROLLED_CLASSES": {
+        "CS189": [
+          "Quiz_1",
+          "Lab_Activity_2",
+          "Final_Project"
+        ],
+        "ELC106": [
+          "Reflection_Paper_1",
+          "LT_2",
+          "LT_1"
+        ],
+        "PH103": [
+          "Reflection_Paper",
+          "Final_Paper",
+          "Quiz_1"
+        ],
+        "MA21": [
+          "Homework_2",
+          "LT_4",
+          "Seatwork_3"
+        ]
+      },
+      "ADDRESS": "TAOQE7O7WY47U3QIYBSKBIUPKRT7GKCDYBNRT5T6",
+      "PUBLIC_KEY": "e877b5ca474e752a9d2b6b1dcf63f404dbf4d191007a1c1433d8850c0d8e9ec1",
+      "PRIVATE_KEY": "7287108a159de15727f0ea48429aefd9128de3ec5f69c37ec10e68517962951e"
+    },
+    {
+      "TYPE": "teacher",
+      "NAME": "teacher123",
+      "PASSWORD": "teacher123",
+      "ENROLLED_CLASSES": {
+        "CS189": [
+          "Quiz_1",
+          "Lab_Activity_2",
+          "Final_Project"
+        ],
+        "ELC106": [
+          "Reflection_Paper_1",
+          "LT_2",
+          "LT_1"
+        ],
+        "PH103": [
+          "Reflection_Paper",
+          "Final_Paper",
+          "Quiz_1"
+        ],
+        "MA21": [
+          "Homework_2",
+          "LT_4",
+          "Seatwork_3"
+        ]
+      },
+      "ADDRESS": "TBCN4F7ELDLR3NGTVNRPHJM5GPSMOYHXN5RXYUPN",
+      "PUBLIC_KEY": "236dc12c2ca8d853f545d3a6fe5b3b2b94d54b7485ec58d90f2c3580485d1c62",
+      "PRIVATE_KEY": "2991943234bf474c6f6aa5981cdc35de27dc3d4c8407518c377c17a3b6ceabfb"
+    },
+    {
+      "TYPE": "student",
+      "NAME": "student123",
+      "PASSWORD": "student123",
+      "ENROLLED_CLASSES": {
+        "CS189": [
+          "Quiz_1",
+          "Lab_Activity_2",
+          "Final_Project"
+        ],
+        "ELC106": [
+          "Reflection_Paper_1",
+          "LT_2",
+          "LT_1"
+        ],
+        "PH103": [
+          "Reflection_Paper",
+          "Final_Paper",
+          "Quiz_1"
+        ],
+        "MA21": [
+          "Homework_2",
+          "LT_4",
+          "Seatwork_3"
+        ]
+      },
+      "ADDRESS": "TCD7UQ7U26FIX5SGB566AVRQ75ZDBJTXYERJAFU4",
+      "PUBLIC_KEY": "9172ec4be6d5f85a1d0181b9fc23bc1ff26e6ca9eb1e9bb2f28122743ee8e7c4",
+      "PRIVATE_KEY": "e535704c956dc7238e76019966c543f62e85c6c3c375295645e2356eb51381e3"
+    }
+  ]
+}
